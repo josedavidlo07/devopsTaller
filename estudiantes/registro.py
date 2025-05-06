@@ -13,3 +13,11 @@ def cargar_estudiantes(nombre_archivo):
             except ValueError:
                 continue  
     return estudiantes
+
+def mostrar_tabla(estudiantes):
+    estudiantes.sort(key=lambda x: x['nombre'])
+    print(f"{'Nombre':<20} {'Nota'}")
+    print("-" * 30)
+    for estudiante in estudiantes:
+        print(f"{estudiante['nombre']:<20} {estudiante['nota']:.2f}")
+
